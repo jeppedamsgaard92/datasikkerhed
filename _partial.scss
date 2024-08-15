@@ -1,0 +1,56 @@
+
+$color-yellow: #D4E601;
+$color-white: #ffffff;
+$color-dark-blue: #011E3C;
+$color-blue: #3498db;
+$color-blue-hover: #2980b9;
+$color-light-blue: #244662;
+$color-green: #2ecc71;
+$color-red: #ff4136;
+$color-red-hover: darkred;
+
+$header-height: 70px;
+
+@mixin font-lato ($font-weight){
+    font-family: "Lato", sans-serif;
+    font-weight: $font-weight;
+    font-style: normal;
+}
+
+/////////////////////
+//Media queries
+/////////////////////
+
+//header
+@mixin padding-l-header (){
+    padding-left: 40px;
+    padding-right: 40px;
+}
+@mixin padding-m-header (){
+    padding-left: 10px;
+    padding-right: 10px;
+}
+//main
+@mixin padding-l-main (){
+    padding-top: 100px;
+    padding-left: 80px;
+    padding-bottom: 100px;
+    padding-right: 0;
+}
+@mixin padding-m-main (){
+    padding-top: 100px;
+    padding-left: 40px;
+    padding-bottom: 100px;
+    padding-right: 40px;
+}
+@mixin padding-s-main (){
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-bottom: 100px;
+    padding-right: 10px;
+}
+
+
+
+
+

@@ -1,0 +1,452 @@
+@import 'partial';
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, p, .button, label {
+    @include font-lato (400);
+}
+
+h1 {
+    font-size: 2rem;
+    color: $color-yellow;
+    @media screen and (max-width: 1000px) {
+        font-size: 1.8rem;
+    }
+    @media screen and (max-width: 400px) {
+        font-size: 1.6rem;
+    }
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: $color-white;
+    @media screen and (max-width: 1000px) {
+        font-size: 1.3rem;
+    }
+    @media screen and (max-width: 400px) {
+        font-size: 1.1rem;
+    }
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: $color-white;
+    @media screen and (max-width: 1000px) {
+        font-size: 1.1rem;
+    }
+    @media screen and (max-width: 400px) {
+        font-size: 1rem;
+    }
+}
+
+h4 {
+    font-size: 1rem;
+    color: $color-white;
+}
+
+p {
+    font-size: 0.875rem;
+    color: $color-white;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: #{$header-height} 1fr 100px;
+}
+
+header {
+    width: 100%;
+    grid-row: 1/2;
+    background-color: $color-dark-blue;
+}
+
+#header-container {
+    position: fixed;
+    top: 0;
+    height: $header-height;
+    overflow: hidden;
+    width: 100%;
+    background-color: $color-dark-blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    @include padding-l-header;
+    z-index: 2;
+
+    @media screen and (max-width: 1300px) {
+        @include padding-m-header ();
+    }
+}
+
+//JS
+.header-collapse {
+    animation: collapse 1s ease forwards;
+    @keyframes collapse {
+        from { height: $header-height; }
+        to { height: 0; }
+    }
+}
+
+.header-show {
+    animation: show 1s ease forwards;
+    @keyframes show {
+        from { height: 0; }
+        to { height: $header-height; }
+    }
+}
+
+.logo-container {
+    height: auto;
+    display: flex;
+    justify-content: start;
+    padding-bottom: 10px;
+    a {
+        img {
+            height: 40px;
+            @media screen and (max-width: 400px) {
+                height: 30px;
+            }
+        }
+    }
+}
+
+.header-nav {
+    height: auto;
+    display: flex;
+    justify-content: end;
+    gap: 40px;
+    padding-bottom: 10px;
+    img {
+        height: 30px;
+        @media screen and (max-width: 400px) {
+            height: 22.5px;
+        }
+    }
+    @media screen and (max-width: 400px) {
+        gap: 10px;
+    }
+}
+
+main {
+    grid-row: 2/3;
+    background-color: $color-light-blue;
+    @include padding-l-main;
+    position: relative;
+
+    @media screen and (max-width: 1300px) {
+        @include padding-m-main;
+    }
+    @media screen and (max-width: 900px) {
+        @include padding-s-main;
+    }
+}
+
+//index.html
+.forside-main {
+    display: flex;
+    overflow: hidden;
+}
+
+.kategorier {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: auto;
+    width: auto;
+    z-index: 1;
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+    }
+
+    .forside-kategori, .overskrift {
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        height: 80px;
+        width: 600px;
+        background-color: $color-dark-blue;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        @media screen and (max-width: 1000px) {
+            width: 100%;
+        }
+        @media screen and (max-width: 400px) {
+            height: auto;
+            .overskrift{
+                height: 80px;
+            }
+        }
+
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+
+            img {
+                //pil
+                height: 60%;
+                @media screen and (max-width: 400px) {
+                    height: 48px;
+                }
+            }
+        }
+    }
+}
+
+.forside-billede {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    height: 140%;
+    @media screen and (max-width: 1000px) {
+        display: none;
+    }
+}
+
+//hvad_er_datasikkerhed.html
+.hvad_er_datasikkerhed-main {
+    display: flex;
+    gap: 20px;
+    @media screen and (max-width: 1000px) {
+        flex-direction: column;
+    }
+}
+
+.brodkrummesti {
+    position: absolute;
+    top: 10px;
+    left: 80px;
+    display: flex;
+    flex-direction: row;
+    p {
+        font-size: 1rem;
+        color: $color-white;
+    }
+    .her-er-du {
+        font-size: 1rem;
+        color: $color-yellow;
+    }
+    @media screen and (max-width: 1300px) {
+        left: 40px;
+    }
+    @media screen and (max-width: 900px) {
+        left: 10px;
+    }
+}
+
+.infoblok-container {
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: auto;
+    background-color: $color-dark-blue;
+    padding: 20px 20px 40px 20px;
+
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+    }
+}
+
+.flex-wrap-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 80px;
+    column-gap: 60px;
+}
+
+.info-bullet {
+    display: grid;
+    grid-template-columns: 1.3rem 1fr;
+    grid-template-rows: 3rem 1fr;
+    gap: 10px;
+    width: 300px;
+    height: auto;
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+        grid-template-rows: auto 1fr;
+        //row-gap: 5px;
+    }
+
+    .bulletpoint {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        height: 1.3rem;
+        width: 1.3rem;
+        padding-top: 4px;
+    }
+    h3 {
+        grid-row: 1/2;
+        grid-column: 2/3;
+    }
+    .p-container {
+        grid-row: 2/3;
+        grid-column: 2/3;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+//FOOTER
+footer {
+    grid-row: 3/4;
+    width: 100%;
+    background-color: $color-dark-blue;
+}
+
+//BUTTONS
+.buttons-container {
+    display: flex;
+    gap: 20px;
+}
+.button {
+    align-self: start;
+    background-color: $color-blue;
+    color: $color-white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 0.875rem;
+
+    &:hover {
+        background-color: $color-blue-hover;
+    }
+}
+
+//BRANCHING
+.branching-spil { //"slører baggrund"
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (max-width: 500px) {
+        align-items: start;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    position: relative;
+    @media screen and (max-width: 850px) {
+        overflow: auto;
+        height: 80vh;
+    }
+}
+.container-container {
+    position: relative;
+    height: auto;
+    width: auto;
+    @media screen and (max-width: 850px) {
+        margin-top: 30px;
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+}
+.cancel-button {
+    height: 40px;
+    width: 40px;
+    background-color: $color-red;
+    color: $color-white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: -40px;
+    right: 0;
+    transform: translate(50%, 50%);
+    z-index: 1;
+
+    &:hover {
+        background-color: $color-red-hover;
+    }
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+#checkbox-og-label-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+.question {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: black;
+}
+.group {
+    margin-bottom: 15px;
+    display: flex;
+
+    input[type="checkbox"] {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        aspect-ratio: 1 / 1;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-right: 10px;
+        align-self: center;
+
+        &:checked {
+            border-color: $color-green;
+            background-color: $color-green;
+        }
+    }
+    label {
+        font-size: 0.875rem;
+    }
+
+    input[type="checkbox"] + label {
+        display: inline-block;
+        cursor: pointer;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+}
+.back-button {
+    display: none;
+}

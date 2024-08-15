@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hvad er datasikkerhed?</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="branching-fortrolighed.js" defer></script>
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- FONT -->
+</head>
+<body>
+    <header>
+        <div id="header-container">
+            <div class="logo-container">
+                <a href="index.html"><img src="img/logo.svg" alt="logo og hjemknap"></a>
+            </div>
+            <nav class="header-nav">
+                <img src="img/søge-funktion.svg" alt="søge funktion">
+                <img src="img/burger-menu.svg" alt="burger-menu">
+            </nav>
+        </div>
+       
+    </header>
+
+    <main class="hvad_er_datasikkerhed-main">
+        <!-- Ude af flow: -->
+        <div class="brodkrummesti"> 
+            <a href="index.html"><p>Forside&nbsp;</p></a>
+            <p class="her-er-du">/ Hvad er datasikkerhed?</p>
+        </div>
+        <!-- i flex -->
+        <div class="kategorier hvad_er_datasikkerhed-indhold">
+            <div class="forside-kategori">
+                <h1>Hvad er datasikkerhed?</h1>
+            </div>
+            <div class="infoblok-container">
+                <h3>Datasikkerhed er som en digital vagt, der vogter over vores mest værdifulde aktiver - vores data. Det handler om at holde vores digitale verden sikker, så følsomme oplysninger forbliver beskyttede mod skurke og uautoriserede brugere. Forestil dig, hvis du låser døren til dit hjem for at beskytte dine ejendele; datasikkerhed er den digitale version af denne lås. Det handler om at forhindre, at dine digitale oplysninger falder i de forkerte hænder og sikre, at de forbliver intakte, tilgængelige og fortrolige. På denne side kan du læse mere om fortrolighed, integritet, tilgængelighed og ansvarlighed samt gå igennem forgrenede scenarier, der belyser konsekvenser ved bestemte handlinger fra dagligdagen.</h3>
+            </div>
+        </div>
+
+        <div class="flex-wrap-container">
+            <!-- i flex-wrap -->
+            <div class="info-bullet">
+                <img src="img/bulletpoint-gul.svg" class="bulletpoint">
+                <h3>Fortrolighed - Bevarelse af Hemmeligheder:</h3>
+                <div class="p-container">
+                    <p>Fortrolighed handler om at sikre, at kun de, der har tilladelse, kan se eller få adgang til visse oplysninger. Det svarer til at holde dine personlige breve låst inde i en sikker kasse, hvor kun du har nøglen. Gennem brug af kryptering og adgangskontrolforanstaltninger sikrer datasikkerhed, at dine private oplysninger forbliver netop det - private.</p>
+                    <button id="button-fortrolighed" class="test-din-viden-button button">Se om du er opmærksom på arbejdspladsen!</button>
+                </div>
+                
+            </div>
+            <div class="info-bullet">
+                <img src="img/bulletpoint-gul.svg" class="bulletpoint">
+                <h3>Integritet - Bevarelse af Ægthed:</h3>
+                <div class="p-container">
+                    <p>Integritet betyder, at data forbliver ægte og uændrede. Tænk på det som at sikre, at ingen kan manipulere din dagbog uden din viden. Datasikkerhed bruger forskellige teknikker og mekanismer til at forhindre uautoriseret ændring eller beskadigelse af data, hvilket sikrer, at de forbliver pålidelige og troværdige.</p>
+                    <button class="test-din-viden-button button">Knap under udvikling</button>
+                </div>
+            </div>
+            <div class="info-bullet">
+                <img src="img/bulletpoint-gul.svg" class="bulletpoint">
+                <h3>Tilgængelighed - Når du har brug for det:</h3>
+                <div class="p-container">
+                    <p>Tilgængelighed handler om at sikre, at data er tilgængelige, når du har brug for dem. Forestil dig at have nøglen til dit hus, men døren er blokeret af rod; du kan ikke komme ind. Datasikkerhed handler om at fjerne disse forhindringer og sikre, at autoriserede brugere altid kan få adgang til de nødvendige oplysninger, uden unødig forsinkelse eller forhindring.</p>
+                    <button class="test-din-viden-button button">Knap under udvikling</button>
+                </div>
+            </div>
+            <div class="info-bullet">
+                <img src="img/bulletpoint-gul.svg" class="bulletpoint">
+                <h3>Ansvarlighed - At stå til regnskab: </h3>
+                <div class="p-container">
+                    <p>Ansvarlighed handler om at have en struktureret tilgang til, hvordan data bruges og beskyttes. Det er som at følge reglerne i et spil; hvis du overtræder dem, er der konsekvenser. Datasikkerhed indebærer at fastlægge klare retningslinjer, dokumentere aktiviteter og sikre, at de, der håndterer data, er ansvarlige og opretholder de højeste standarder for sikkerhed og integritet.</p>
+                    <button class="test-din-viden-button button">Knap under udvikling</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- JS -->
+        <div class="branching-spil">
+             <!-- Scenario -->
+             <div class="container-container">
+                <button class="cancel-button"><img src="img/kryds.svg" alt="Luk-knap"></button>
+                <div class="container">
+                    <p class="question"></p>
+                    <div id="checkbox-og-label-container">
+                        <div class="group">
+                            <input type="checkbox" name="valg-mulighed" id="mulighed-1" value="1">
+                            <label class="mulighed" for="mulighed-1"></label>
+                        </div>
+                        <div class="group">
+                            <input type="checkbox" name="valg-mulighed" id="mulighed-2" value="2">
+                            <label class="mulighed" for="mulighed-2"></label>
+                        </div>
+                        <div class="group">
+                            <input type="checkbox" name="valg-mulighed" id="mulighed-3" value="3">
+                            <label class="mulighed" for="mulighed-3"></label>
+                        </div>
+                    </div>
+                    <!-- knap -->
+    
+                   <div class="buttons-container">
+                    <button class="back-button button">Tilbage</button>
+                    <button class="next-button button">Videre</button>
+                   </div>
+                   
+                </div>
+             </div>
+            
+        </div>
+      
+    </main>
+    <footer></footer>
+</body>
+</html>
